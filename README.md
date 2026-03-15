@@ -25,13 +25,20 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+Game Purpose:
+A number guessing game where the player tries to guess a secret number between 1 and 100 within a limited number of attempts. The game provides hints after each guess to guide the player toward the correct answer.
+Bugs Found:
+
+Inverted hints — check_guess returned "Go HIGHER" when the guess was too high and "Go LOWER" when it was too low, making the game impossible to win by following hints.
+Attempts off by one — st.session_state.attempts was initialized to 1 instead of 0, giving the player one fewer attempt than the stated limit.
+Secret cast to string — Every even-numbered attempt converted the secret number to a string, causing incorrect string-vs-integer comparisons and random hint failures.
+No input validation — parse_guess accepted numbers outside the 1-100 range, including negative numbers and values over 100.
+New Game didn't reset state — Clicking New Game didn't reset session_state.status, score, or history, leaving the game stuck in a "lost" state.
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+![Winning game screenshot](codepath_project1_win.png)
+
 
 ## 🚀 Stretch Features
 
