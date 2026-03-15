@@ -4,9 +4,14 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 ## 1. What was broken when you started?
 
-- What did the game look like the first time you ran it?
-- List at least two concrete bugs you noticed at the start  
-  (for example: "the hints were backwards").
+When I first ran the game it appeared to work visually but immediately showed 
+suspicious behavior during gameplay. The first major bug I noticed was that the 
+hint direction was completely inverted — when I guessed 1 and the secret number 
+was 8, it told me to "Go LOWER" instead of "Go HIGHER." The second bug was that 
+the attempts counter started at 7 even though the settings panel clearly showed 
+"Attempts allowed: 8," meaning the player loses one attempt before they even start. 
+I also discovered the score went negative as guesses were made, and the game 
+accepted inputs completely outside the 1-100 range, like -5 and 105.
 
 ---
 
